@@ -1,0 +1,63 @@
+body {
+    height: 2000px;
+}
+
+div {
+    height: 100px;
+    background-color: lightgray;
+    padding: 10px;
+    margin-bottom: 5px;
+    border: 1px solid black;
+}
+
+.relative {
+    background-color: rgb(254, 106, 106);
+    position: relative;
+    top: 10px;
+    left: 10px; /* Ela pode se deslocar usando top, left, bottom e right, porém sobrepõe outros elementos */
+}
+
+.relative2 {
+    background-color: rgb(254, 106, 106); /* Caso sua posição não seja modificada, ela funcionará igual a static */
+    position: relative;
+}
+
+.absolute {
+    background-color: rgb(171, 255, 171);
+    position: absolute;
+
+    top: 30px; /* A posição absolute também pode utilizar top, left, etc. Porém ela tem que possuir algum elemento de referência; por padrão, ela usa a tela como referência */
+    left: 40%;
+}
+
+.absoluteR {
+    background-color: rgb(171, 255, 171);
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    font-size: 12px;
+
+    top: 10px; /* Dessa forma, se colocarmos um elemento com posição absolute dentro de um relative, o relative se torna pai do absolute, e este começa a se referenciar no relative para ser posicionado na tela */
+    left: 50px;
+}
+
+.fixed {
+    background-color: rgb(75, 75, 189);
+    position: fixed;
+
+    top: 50px;
+    right: 50px; /* Ele se mantém totalmente fixo na sua posição, acompanhando a rolagem do site; é utilizado em menus. Também é possível utilizar top, left, etc. */
+}
+
+.sticky {
+    background-color: rgb(255, 255, 171);
+    position: sticky;
+    top: 10px;
+    left: 20px; /* O sticky é uma posição bem diferente; ele acompanha o fluxo do HTML até que a barra de rolagem chegue nele. A partir desse momento, ele fica fixo na tela, muito parecido com a posição fixed. No entanto, ele para no último elemento. */
+}
+
+.initial {
+    position: initial;
+    height: 20px;
+    /* Essa posição herda todas as características do elemento dentro do qual ela está. Neste exemplo, ela está dentro de uma div com position relative, com top e left de 10px. A div com position initial vai usar a relative como referência para se posicionar. */
+}
