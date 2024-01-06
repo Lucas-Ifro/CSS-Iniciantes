@@ -1,0 +1,158 @@
+/*Temos dois dipos de display padrão para as tags html, são eles o Block e inline, dependo da tag ela recebe um ou outro.
+Exemplo: 
+div, main, article, footer, header todos recebem o display block.
+a, button, input, img, select todos recebem o display inline por padrão*/
+
+/*No entando temos varios tipos de display são eles:
+block
+inline
+flex
+flexbox
+inline-block
+inline-flex
+inline-flexbox
+
+Nesse documento vou tentar explicar a diferença e caracteristicas de cada um.*/
+
+header{
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.5em;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgb(90, 167, 238);
+    padding: 20px;
+    margin: 0px;
+}
+main{
+    font-size: 1.2em;
+    font-family: Arial, Helvetica, sans-serif;
+    text-indent: 30px;
+}
+
+article{
+    background-color: rgb(221, 221, 221);
+    height: 600px;
+    padding: 10px;
+}
+
+div{
+    background-color: rgb(90, 167, 238);
+    width: 100px;
+    height: 100px;
+    padding: 0px;
+    margin: 5px;
+
+
+}
+
+    /*Block*/
+
+.block div{
+    /*toda Div por padrão já um display block, as suas caracteristicas são que ele ocupa toda a linha "o espaço horizontal", todo display block inicia em uma nova linha, ou seja, um fica em baixo do outro, também podemos modificar o seu tamanho com o width e height.*/
+    display: block; 
+    width: 100px;
+    height: 120px;
+
+}
+.block div.linha{
+    background-color: bisque;
+    width: 100%; /*O block por padrão ocupa toda alinha, como podemos ver nessa div*/
+}
+
+
+    /*Inline*/
+
+    /*Podemos mudar o display de qualquer elemento, e vou fazer isso com a divs para poder explicar melhor*/
+
+.inline div{
+    /*O display inline tem como caracteristica está em uma linha, ou seja, um elemento na frente do outro.
+    Esse display faz com que o elemento ocupe apenas o espaço necessario para apresentar o que esta dentro dele.
+    Todos os elementos ficam um na frente do outro, e ao criar um novo elemento ele não quebrara a linha, só se não ouver espaço.
+    Necesse display no é possivel utilizar o width ou height.*/
+    display: inline;
+}
+
+
+/*Flex*/
+
+/*O display flex ele funciona de uma forma diferente, para podemos apricar alguma propriedade no elemento precisamos colocar o seu pai como display flex, nesse caso o article, colocamos o article como flex e utilizamos algumas propriedades para mudar o posicionamento das divs dentro do article.*/
+
+article.flex{
+    display: flex;
+    align-items: center; 
+    /*Está propriedade centraliza o elemento verticalmento no eixo Y, podemos utilizar o algumas propriedades como: flex-end, center, flex-start;*/
+
+
+    justify-content: space-around; 
+    /*Está propriedade centraliza o elemento na horizontal eixo x, mais também delimita espaçamentos entre os elementos.*/
+    /*As propriedades de alinhamento são: left (esquerda), right (direita), center (centro).*/
+
+    /*As propriedades de espaçamento são: 
+      space-evenly (Essa propriedade coloca um espaço igual entre os elementos e a borda da tela.)
+      space-betweem (cola o elemento na borda da tela, se tiverem muitos, dois seram colados e os outros teram um espaço igual entre eles.)
+      space-around (Cria uma margin em volta de todos os elementos, criando um espaçamento duplo entre eles, onde o espaço entre dois elementos é o dobro do espaço entre o elemento e a borda da tela.*/
+}
+.flex div{
+    /*O filho de um elemento com display flex recebe as modificaçôes, porém os filhos de seus filhos não recebem e se voce quiser configurar eles, terá que transformar o elemento em flex também.*/
+
+    display: flex  ;
+    align-items: center;
+    justify-content: center;
+
+}
+div.meio{
+    /*Esta div está dentro da div de cima, e foi centralizada no meio, por que é filha da de cima, e herdou as caracteristicas*/
+    /*Basicamente é como se o elemento pai discesse como o elemento filho tem que se posicinar, como se ele manda-se nesse.*/
+    background-color: bisque;
+    height: 50px;
+    width: 50px;
+    font-size: 0.5em;
+}
+
+/*flexbox*/
+
+/*O flexbox nada mais é do que a utilização de algumas propriedades junto com o display flex, o que faciliata muito o posicionamento dos elementos. Ele facilita a criação de sites mais responsivos e se juntado com media queries.*/
+
+/*Ele segue a mesma regra do modelo flex, de pai e filho, a diferença são algumas propriedades.*/
+
+
+article.flexbox{
+    display: flex; /*Só por alterar o display para flex o elementos para de se alinha na vertical e começam a se alinha na horizontal um na frente do outro.*/
+
+    justify-content: space-evenly;/*Funciona da mesma forma que foi explicado a cima*/
+    align-items: center;/*Funciona da mesma forma que foi explicado a cima*/
+
+    flex-wrap: wrap;/*Essa propriedade faz com que se os elementos não couberem na linha seram jogados para a proxima linha com a centralização e espaçamento obdecidos.*/
+    /*Por padrão é o nowrap e também temos o wrap-reverse que joga os elementos que passaram para cima dos outros e os alinha.*/
+    /*Com isso podemos fazer elementos mais resposivos que vão se adaptando.*/
+
+
+
+}
+div.item{
+    height: 200px;
+    width: 200px;
+}
+
+/*Agora vamos ver algumas propriedades para os filhos do flex*/
+
+div.box{
+    /*width: 200px; se não for colocando a largura o elemento vai utilizar a menor largura possivel que caiba o conteúdo como se fosse um inline.*/
+    flex-basis: 100px; /*Essa propriedade define uma largura e altura minima para o elemento, essa é a largura que ele vai iniciar, mais podemos modificala.*/
+    height: 100px; /*O height e o width são superior ao flex-basis*/
+}
+
+#item-1{
+    flex-grow: 1;
+    /*O flex-grow é a proporção que o elemento vai ocupar o espaço disponivel, nesse caso o item 1 vai ocupar 2 partes e o item 2 e 3, uma parte cada.*/
+    flex-shrink: 1;/*Essa propriedade regula como o elemento vai diminuir quando maior o numero mais rapido o elemento vai diminuindo conforme a tela vai diminuindo, é basicamente o contrario do flex-grow.*/
+    
+}
+
+#item-2, #item-3{
+    flex-shrink: 2;
+    flex-grow: 1;
+}
+
+
+   
