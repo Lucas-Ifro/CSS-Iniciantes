@@ -42,7 +42,6 @@ div{
     padding: 0px;
     margin: 5px;
 
-
 }
 
     /*Block*/
@@ -136,16 +135,36 @@ div.item{
 
 /*Agora vamos ver algumas propriedades para os filhos do flex*/
 
+article.flexbox2{
+    display: flex; /*Só por alterar o display para flex o elementos para de se alinha na vertical e começam a se alinha na horizontal um na frente do outro.*/
+
+    justify-content: space-evenly;/*Funciona da mesma forma que foi explicado a cima*/
+    align-items: center;/*Funciona da mesma forma que foi explicado a cima*/
+
+    flex-wrap: nowrap;/*Essa propriedade faz com que se os elementos não quebrem a linha não sendo jogados para a proxima linha*/
+    /*Por padrão é o nowrap e também temos o wrap-reverse que joga os elementos que passaram para cima dos outros e os alinha.*/
+    /*Com isso podemos fazer elementos mais resposivos que vão se adaptando.*/
+
+
+
+}
 div.box{
     /*width: 200px; se não for colocando a largura o elemento vai utilizar a menor largura possivel que caiba o conteúdo como se fosse um inline.*/
-    flex-basis: 100px; /*Essa propriedade define uma largura e altura minima para o elemento, essa é a largura que ele vai iniciar, mais podemos modificala.*/
+    flex-basis: 200px; /*Essa propriedade define uma largura e altura minima para o elemento, essa é a largura que ele vai iniciar, mais podemos modificala.*/
     height: 100px; /*O height e o width são superior ao flex-basis*/
+
 }
 
 #item-1{
-    flex-grow: 1;
-    /*O flex-grow é a proporção que o elemento vai ocupar o espaço disponivel, nesse caso o item 1 vai ocupar 2 partes e o item 2 e 3, uma parte cada.*/
-    flex-shrink: 1;/*Essa propriedade regula como o elemento vai diminuir quando maior o numero mais rapido o elemento vai diminuindo conforme a tela vai diminuindo, é basicamente o contrario do flex-grow.*/
+    /* flex-grow: 2;
+    O flex-grow é a proporção que o elemento vai ocupar o espaço disponivel, nesse caso o item 1 vai ocupar 2 partes e o item 2 e 3, uma parte cada.*/
+    /*flex-shrink: 1; 
+    Essa propriedade regula como o elemento vai diminuir quando maior o numero mais rapido o elemento vai diminuindo conforme a tela vai diminuindo, é basicamente o contrario do flex-grow.*/
+
+    /*Temos a propriedade shorthend
+        que basicamente incurta o codigo.*/
+    flex: 3 1 100px; /* flex: flex-wrap  flex-shrink  flex-basis*/
+    order: 3; /*Com essa propriedade podemos modificar a ordem com que os elementos estão dispostos no elemento pai.*/
     
 }
 
@@ -154,5 +173,56 @@ div.box{
     flex-grow: 1;
 }
 
+/*Grid*/
+
+/*O display grid é utilizado para criar o layouts em grid ou seja em grade, muito util para a organização e facilitando muito a construção do site.
+O display grid é dividido em linhas e colunas.
+E ele Funciona como so outros diplays, tendo uma conteiner chamado de pai e seus filhos chamados de itens, o pai dita como os filhos vão se posicionar na tela, mais os itens também conseguem modificar a sua posição e caracteristicas.*/
+
+.grid{
+    display: grid;
+    grid-template-columns: 100px auto 20%; /*Com essa propriedade podemos dividir o site em quantas colunas quisermos, e definir a largura dessa colunas de forma invidual.*/
+    grid-template-rows: 20% 80%; /*Com essa propriedade podemos modificar a altura de cada linha ou caso haja varias linhas podemos colocar um padrão, por exemplo a primeira tera 200px e a segundo 100px por consequencia a terceira tera 200px e a quarta 100px e assim vai indo.*/
+    gap: 5px;/*Essa propriedade adiciona um espaçamento entre os itens, um espaço entre todos, entre as linhas e as colunas.*/
+}
 
    
+.grid div{
+    width: auto; /*O auto faz com que a div ocupe o espaço que foi determinado a cima, esse valor é padrão so foi colocado devido a uma configuração la do inicio do css que configura as divs.*/
+    height: auto;
+
+}
+
+/*Display grid tamplates areas*/
+/*Vamos fazer um exemplo de layout de um site.*/
+
+.gridLayout{
+    display: grid;
+
+    grid-template-areas: 
+    'header header header'
+    'sidebar content content'
+    'footer footer footer';
+
+}
+
+.gridLayout div{
+    width: auto;
+    height: auto;
+}
+
+#header{
+    grid-area: header;
+}
+
+#sidebar{
+    grid-area: sidebar;
+}
+
+#content{
+    grid-area: content;
+}
+
+#footer{
+    grid-area: footer;
+}
