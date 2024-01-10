@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Aprendendo os tipos de Displays</title>
+    <title>Aprendendo os Tipos de Displays</title>
 </head>
 <body>
     <header>
@@ -13,29 +13,35 @@
     <main>
         <p>Display do tipo block</p>
         <article class="block">
-            <div class="linha">Essa é forma que um display block fica se não mechermos no seu width, ele ocupa toda a linha.</div>
+            <div class="linha">Esta é a forma como um display block se comporta quando não alteramos seu width; ele ocupa toda a linha.</div>
             <div>1</div>
             <div>2</div>
             <div>3</div>
-
         </article>
 
-        <p>Display do tipo inline </p>
+        <p>Display do tipo inline</p>
         <article class="inline">
-
-            <div> Aqui temos uma div</div>
-            <div> Aqui temos uma div</div>
-            <div> Aqui temos uma div</div>
-            <div>O display inline só ocupa o espaço necessario, e a linha só quebra se não tiver espaço</div>
-
+            <div>Aqui temos uma div</div>
+            <div>Aqui temos uma div</div>
+            <div>Aqui temos uma div</div>
+            <div>O display inline ocupa apenas o espaço necessário, e a linha só quebra se não houver espaço.</div>
+        </article>
+        
+        <p>Display do tipo inline-block</p>
+        <article class="inline-block">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
         </article>
 
         <p>Display do tipo flex</p>
         <article class="flex">
-            <div> 
+            <div>
                 <div class="meio">dentro</div>
             </div>
-
             <div></div>
             <div></div>
         </article>
@@ -70,18 +76,17 @@
             <div id="sidebar"><p>Sidebar</p></div>
             <div id="content"><p>Conteúdo</p></div>
             <div id="footer"><p>Rodapé</p></div>
-
         </article>
 
-        <p>Display do tipo inline-block</p>
-        <article class="inline-block"></article>
-
-        <p>Display do tipo inline-flex</p>
-        <article class="inline-flex"></article>
-
-        <p>Display do tipo inline-flexbox</p>
-        <article class="inline-flexbox"></article>
-
+        <p>Alinhamento individual dos itens dentro do grid</p>
+        <article class="gridItens">
+            <div id="item-01">1</div>
+            <div id="item-02">2</div>
+            <div id="item-03">3</div>
+            <div id="item-04">4</div>
+            <div id="item-05">5</div>
+            <div id="item-06">6</div>
+        </article>
     </main>
 </body>
 </html>

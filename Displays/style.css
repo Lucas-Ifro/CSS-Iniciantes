@@ -1,228 +1,274 @@
-/*Temos dois dipos de display padrão para as tags html, são eles o Block e inline, dependo da tag ela recebe um ou outro.
-Exemplo: 
-div, main, article, footer, header todos recebem o display block.
-a, button, input, img, select todos recebem o display inline por padrão*/
+/* Temos dois tipos de display padrão para as tags HTML, são eles o Block e Inline, dependendo da tag ela recebe um ou outro.
+Exemplo: div, main, article, footer, header, todos recebem o display block. a, button, input, img, select, todos recebem o display inline por padrão */
 
-/*No entando temos varios tipos de display são eles:
-block
-inline
-flex
-flexbox
-inline-block
-inline-flex
-inline-flexbox
+/* No entanto, temos vários tipos de display, são eles: block, inline, flex, flexbox, inline-block, inline-flex, inline-flexbox. Neste documento, vou tentar explicar a diferença e características de cada um. */
 
-Nesse documento vou tentar explicar a diferença e caracteristicas de cada um.*/
+/*É muito importante praticar; modifique os valores das propriedades e observe como os elementos se comportam. Somente dessa forma você conseguirá entender. Não apenas leia e veja, também pratique!!!*/
 
-header{
+header {
     text-align: center;
     font-weight: bold;
     font-size: 1.5em;
     font-family: Arial, Helvetica, sans-serif;
     background-color: rgb(90, 167, 238);
     padding: 20px;
-    margin: 0px;
+    margin: 0;
 }
-main{
+
+main {
     font-size: 1.2em;
     font-family: Arial, Helvetica, sans-serif;
     text-indent: 30px;
 }
 
-article{
+article {
     background-color: rgb(221, 221, 221);
     height: 600px;
     padding: 10px;
 }
 
-div{
+div {
     background-color: rgb(90, 167, 238);
     width: 100px;
     height: 100px;
-    padding: 0px;
+    padding: 0;
     margin: 5px;
-
+    border: 1px dashed black;
 }
 
-    /*Block*/
+/* Block */
 
-.block div{
-    /*toda Div por padrão já um display block, as suas caracteristicas são que ele ocupa toda a linha "o espaço horizontal", todo display block inicia em uma nova linha, ou seja, um fica em baixo do outro, também podemos modificar o seu tamanho com o width e height.*/
-    display: block; 
+.block div {
+    /* Toda div, por padrão, já tem um display block. Suas características são que ela ocupa toda a linha (o espaço horizontal). Todo display block inicia em uma nova linha, ou seja, um fica em baixo do outro. Também podemos modificar o seu tamanho com o width e height. */
+    display: block;
     width: 100px;
     height: 120px;
-
 }
-.block div.linha{
+
+.block div.linha {
     background-color: bisque;
-    width: 100%; /*O block por padrão ocupa toda alinha, como podemos ver nessa div*/
+    width: 100%; /* O block, por padrão, ocupa toda a linha, como podemos ver nesta div */
 }
 
+/* Inline */
 
-    /*Inline*/
+/* Podemos mudar o display de qualquer elemento, e vou fazer isso com as divs para poder explicar melhor */
 
-    /*Podemos mudar o display de qualquer elemento, e vou fazer isso com a divs para poder explicar melhor*/
-
-.inline div{
-    /*O display inline tem como caracteristica está em uma linha, ou seja, um elemento na frente do outro.
-    Esse display faz com que o elemento ocupe apenas o espaço necessario para apresentar o que esta dentro dele.
-    Todos os elementos ficam um na frente do outro, e ao criar um novo elemento ele não quebrara a linha, só se não ouver espaço.
-    Necesse display no é possivel utilizar o width ou height.*/
+.inline div {
+    /* O display inline tem como característica estar em uma linha, ou seja, um elemento na frente do outro.
+    Esse display faz com que o elemento ocupe apenas o espaço necessário para apresentar o que está dentro dele.
+    Todos os elementos ficam um na frente do outro, e ao criar um novo elemento ele não quebrará a linha, só se não houver espaço.
+    Nesse display não é possível utilizar o width ou height. */
     display: inline;
 }
 
+/* Inline-block */
 
-/*Flex*/
+/* A única diferença que temos do block para o inline-block é a disposição dos elementos que passa a ser em linha, um na frente do outro.
+Ou seja, mantemos as características do block normal e adicionamos a disposição dos itens em linha que é uma característica do inline.
+Isso serve para todos os displays o inline-flex, e o inline-grid, eles mantêm suas características com a adição da disposição dos elementos em linha. */
 
-/*O display flex ele funciona de uma forma diferente, para podemos apricar alguma propriedade no elemento precisamos colocar o seu pai como display flex, nesse caso o article, colocamos o article como flex e utilizamos algumas propriedades para mudar o posicionamento das divs dentro do article.*/
-
-article.flex{
-    display: flex;
-    align-items: center; 
-    /*Está propriedade centraliza o elemento verticalmento no eixo Y, podemos utilizar o algumas propriedades como: flex-end, center, flex-start;*/
-
-
-    justify-content: space-around; 
-    /*Está propriedade centraliza o elemento na horizontal eixo x, mais também delimita espaçamentos entre os elementos.*/
-    /*As propriedades de alinhamento são: left (esquerda), right (direita), center (centro).*/
-
-    /*As propriedades de espaçamento são: 
-      space-evenly (Essa propriedade coloca um espaço igual entre os elementos e a borda da tela.)
-      space-betweem (cola o elemento na borda da tela, se tiverem muitos, dois seram colados e os outros teram um espaço igual entre eles.)
-      space-around (Cria uma margin em volta de todos os elementos, criando um espaçamento duplo entre eles, onde o espaço entre dois elementos é o dobro do espaço entre o elemento e a borda da tela.*/
+.inline-block div {
+    display: inline-block;
+    height: 80px;
+    width: 100px; /* Poder mexer na altura e largura são características do block, mas no inline-block também podemos usar, provando que as características dele ainda estão presentes. */
 }
-.flex div{
-    /*O filho de um elemento com display flex recebe as modificaçôes, porém os filhos de seus filhos não recebem e se voce quiser configurar eles, terá que transformar o elemento em flex também.*/
 
-    display: flex  ;
+/* Flex */
+
+/* O display flex funciona de uma forma diferente. Para podermos aplicar alguma propriedade no elemento, precisamos colocar o seu pai como display flex, nesse caso o article. Colocamos o article como flex e utilizamos algumas propriedades para mudar o posicionamento das divs dentro do article. */
+
+article.flex {
+    display: flex;
+    align-items: center;
+    /* Esta propriedade centraliza o elemento verticalmente no eixo Y. Podemos utilizar algumas propriedades como: flex-end, center, flex-start; */
+
+    justify-content: space-around;
+    /* Esta propriedade centraliza o elemento na horizontal, eixo x, mas também delimita espaçamentos entre os elementos.
+    As propriedades de alinhamento são: left (esquerda), right (direita), center (centro).
+    As propriedades de espaçamento são:
+    space-evenly (Essa propriedade coloca um espaço igual entre os elementos e a borda da tela.)
+    space-between (Cola o elemento na borda da tela; se tiverem muitos, dois serão colados e os outros terão um espaço igual entre eles.)
+    space-around (Cria uma margem em volta de todos os elementos, criando um espaçamento duplo entre eles, onde o espaço entre dois elementos é o dobro do espaço entre o elemento e a borda da tela. */
+}
+
+.flex div {
+    /* O filho de um elemento com display flex recebe as modificações, porém os filhos de seus filhos não recebem, e se você quiser configurar eles, terá que transformar o elemento em flex também. */
+    display: flex;
     align-items: center;
     justify-content: center;
-
 }
-div.meio{
-    /*Esta div está dentro da div de cima, e foi centralizada no meio, por que é filha da de cima, e herdou as caracteristicas*/
-    /*Basicamente é como se o elemento pai discesse como o elemento filho tem que se posicinar, como se ele manda-se nesse.*/
+
+div.meio {
+    /* Esta div está dentro da div de cima e foi centralizada no meio porque é filha da de cima e herdou as características.
+    Basicamente é como se o elemento pai dissesse como o elemento filho tem que se posicionar, como se ele mandasse nisso. */
     background-color: bisque;
     height: 50px;
     width: 50px;
     font-size: 0.5em;
 }
 
-/*flexbox*/
+/* Flexbox */
 
-/*O flexbox nada mais é do que a utilização de algumas propriedades junto com o display flex, o que faciliata muito o posicionamento dos elementos. Ele facilita a criação de sites mais responsivos e se juntado com media queries.*/
+/* O flexbox nada mais é do que a utilização de algumas propriedades junto com o display flex, o que facilita muito o posicionamento dos elementos.
+Ele facilita a criação de sites mais responsivos e se juntado com media queries.
+Ele segue a mesma regra do modelo flex, de pai e filho, a diferença são algumas propriedades. */
 
-/*Ele segue a mesma regra do modelo flex, de pai e filho, a diferença são algumas propriedades.*/
+article.flexbox {
+    display: flex; /* Só por alterar o display para flex o elementos param de se alinhar na vertical e começam a se alinhar na horizontal um na frente do outro. */
 
+    justify-content: space-evenly; /* Funciona da mesma forma que foi explicado acima */
+    align-items: center; /* Funciona da mesma forma que foi explicado acima */
 
-article.flexbox{
-    display: flex; /*Só por alterar o display para flex o elementos para de se alinha na vertical e começam a se alinha na horizontal um na frente do outro.*/
-
-    justify-content: space-evenly;/*Funciona da mesma forma que foi explicado a cima*/
-    align-items: center;/*Funciona da mesma forma que foi explicado a cima*/
-
-    flex-wrap: wrap;/*Essa propriedade faz com que se os elementos não couberem na linha seram jogados para a proxima linha com a centralização e espaçamento obdecidos.*/
-    /*Por padrão é o nowrap e também temos o wrap-reverse que joga os elementos que passaram para cima dos outros e os alinha.*/
-    /*Com isso podemos fazer elementos mais resposivos que vão se adaptando.*/
-
-
-
+    flex-wrap: wrap; /* Essa propriedade faz com que, se os elementos não couberem na linha, sejam jogados para a próxima linha com a centralização e espaçamento obedecidos. Por padrão é o nowrap e também temos o wrap-reverse que joga os elementos que passaram para cima dos outros e os alinha. Com isso, podemos fazer elementos mais responsivos que vão se adaptando. */
 }
-div.item{
+
+div.item {
     height: 200px;
     width: 200px;
 }
 
-/*Agora vamos ver algumas propriedades para os filhos do flex*/
+/* Agora vamos ver algumas propriedades para os filhos do flex */
 
-article.flexbox2{
-    display: flex; /*Só por alterar o display para flex o elementos para de se alinha na vertical e começam a se alinha na horizontal um na frente do outro.*/
+article.flexbox2 {
+    display: flex; /* Só por alterar o display para flex os elementos param de se alinhar na vertical e começam a se alinhar na horizontal um na frente do outro. */
 
-    justify-content: space-evenly;/*Funciona da mesma forma que foi explicado a cima*/
-    align-items: center;/*Funciona da mesma forma que foi explicado a cima*/
+    justify-content: space-evenly; /* Funciona da mesma forma que foi explicado acima */
+    align-items: center; /* Funciona da mesma forma que foi explicado acima */
 
-    flex-wrap: nowrap;/*Essa propriedade faz com que se os elementos não quebrem a linha não sendo jogados para a proxima linha*/
-    /*Por padrão é o nowrap e também temos o wrap-reverse que joga os elementos que passaram para cima dos outros e os alinha.*/
-    /*Com isso podemos fazer elementos mais resposivos que vão se adaptando.*/
-
-
-
-}
-div.box{
-    /*width: 200px; se não for colocando a largura o elemento vai utilizar a menor largura possivel que caiba o conteúdo como se fosse um inline.*/
-    flex-basis: 200px; /*Essa propriedade define uma largura e altura minima para o elemento, essa é a largura que ele vai iniciar, mais podemos modificala.*/
-    height: 100px; /*O height e o width são superior ao flex-basis*/
-
+    flex-wrap: nowrap; /* Essa propriedade faz com que, se os elementos não quebrarem a linha, não sejam jogados para a próxima linha. Por padrão é o nowrap e também temos o wrap-reverse que joga os elementos que passaram para cima dos outros e os alinha. Com isso, podemos fazer elementos mais responsivos que vão se adaptando. */
 }
 
-#item-1{
-    /* flex-grow: 2;
-    O flex-grow é a proporção que o elemento vai ocupar o espaço disponivel, nesse caso o item 1 vai ocupar 2 partes e o item 2 e 3, uma parte cada.*/
-    /*flex-shrink: 1; 
-    Essa propriedade regula como o elemento vai diminuir quando maior o numero mais rapido o elemento vai diminuindo conforme a tela vai diminuindo, é basicamente o contrario do flex-grow.*/
-
-    /*Temos a propriedade shorthend
-        que basicamente incurta o codigo.*/
-    flex: 3 1 100px; /* flex: flex-wrap  flex-shrink  flex-basis*/
-    order: 3; /*Com essa propriedade podemos modificar a ordem com que os elementos estão dispostos no elemento pai.*/
-    
+div.box {
+    flex-basis: 200px; /* Esta propriedade define uma largura e altura mínima para o elemento, e essa é a largura com a qual ele começará. */
+    height: 100px; /* A altura e a largura são superiores ao flex-basis. */
 }
 
-#item-2, #item-3{
+#item-1 {
+    /* flex-grow: 2; 
+       O flex-grow é a proporção que o elemento vai ocupar o espaço disponível. Neste caso, o item 1 vai ocupar 2 partes e o item 2 e 3, uma parte cada.
+       flex-shrink: 1; 
+       Essa propriedade regula como o elemento vai diminuir. Quanto maior o número, mais rápido o elemento vai diminuindo conforme a tela vai diminuindo. É basicamente o contrário do flex-grow.
+       Temos a propriedade shorthend que basicamente encurta o código. */
+    flex: 3 1 100px; /* flex: flex-grow flex-shrink flex-basis */
+    order: 3; /* Com essa propriedade, podemos modificar a ordem com que os elementos estão dispostos no elemento pai. */
+}
+
+#item-2, #item-3 {
     flex-shrink: 2;
     flex-grow: 1;
 }
 
-/*Grid*/
+/* Grid */
 
-/*O display grid é utilizado para criar o layouts em grid ou seja em grade, muito util para a organização e facilitando muito a construção do site.
-O display grid é dividido em linhas e colunas.
-E ele Funciona como so outros diplays, tendo uma conteiner chamado de pai e seus filhos chamados de itens, o pai dita como os filhos vão se posicionar na tela, mais os itens também conseguem modificar a sua posição e caracteristicas.*/
+/* O display grid é utilizado para criar layouts em grid, ou seja, em grade, muito útil para a organização e facilitando muito a construção do site.
+   O display grid é dividido em linhas e colunas.
+   Ele funciona como os outros displays, tendo um contêiner chamado de pai e seus filhos chamados de itens. O pai dita como os filhos vão se posicionar na tela, mas os itens também conseguem modificar a sua posição e características. */
 
-.grid{
+.grid {
     display: grid;
-    grid-template-columns: 100px auto 20%; /*Com essa propriedade podemos dividir o site em quantas colunas quisermos, e definir a largura dessa colunas de forma invidual.*/
-    grid-template-rows: 20% 80%; /*Com essa propriedade podemos modificar a altura de cada linha ou caso haja varias linhas podemos colocar um padrão, por exemplo a primeira tera 200px e a segundo 100px por consequencia a terceira tera 200px e a quarta 100px e assim vai indo.*/
-    gap: 5px;/*Essa propriedade adiciona um espaçamento entre os itens, um espaço entre todos, entre as linhas e as colunas.*/
+    grid-template-columns: 100px auto 20%; /* Com essa propriedade, podemos dividir o site em quantas colunas quisermos e definir a largura dessas colunas de forma individual. */
+    grid-template-rows: 20% 80%; /* Com essa propriedade, podemos modificar a altura de cada linha ou, caso haja várias linhas, podemos colocar um padrão, por exemplo, a primeira terá 200px e a segunda 100px, e assim por diante. */
+    gap: 5px; /* Essa propriedade adiciona um espaçamento entre os itens, um espaço entre todas as linhas e colunas. */
 }
 
-   
-.grid div{
-    width: auto; /*O auto faz com que a div ocupe o espaço que foi determinado a cima, esse valor é padrão so foi colocado devido a uma configuração la do inicio do css que configura as divs.*/
+.grid div {
+    width: auto; /* O auto faz com que a div ocupe o espaço que foi determinado acima. Este valor é padrão e só foi colocado devido a uma configuração lá no início do CSS que configura as divs. */
     height: auto;
-
 }
 
-/*Display grid tamplates areas*/
-/*Vamos fazer um exemplo de layout de um site.*/
+/* Display grid templates areas */
 
-.gridLayout{
+/* Vamos fazer um exemplo de layout de um site. */
+
+.gridLayout {
     display: grid;
-
     grid-template-areas: 
-    'header header header'
-    'sidebar content content'
-    'footer footer footer';
+        'header header header header header'
+        'sidebar content content content content'
+        'footer footer footer footer footer';
+    /* Com essa propriedade acima, podemos dividir a tela em várias colunas, quantas quisermos, e organizá-las da forma que quisermos. Neste caso, eu tenho o footer e o header ocupando todas as colunas na parte de baixo e na de cima. No meio, temos o sidebar ocupando 20% da tela na horizontal e o content ocupando 80% da tela na horizontal. Com isso, criamos um layout simples. */
 
+    grid-template-columns: 20% 20% 20% 20% 20%; /* Essa propriedade já foi explicada acima. Ela foi colocada com o intuito de não deixar que o content ocupe mais de 80% do width, mantendo-o na posição correta. */
+
+    grid-template-rows: 64px 1fr 64px; /* Com essa propriedade, adicionamos o tamanho das linhas. O valor 1fr é como uma forma de fração utilizada no grid. Por exemplo, se tivermos um grid-template-rows: 1fr 2fr 1fr; seria o mesmo que ter grid-rows: 25% 50% 25%, ou seja, divide a tela em uma fração. Dessa forma, a linha do meio vai ocupar todo o espaço disponível. */
 }
 
-.gridLayout div{
+.gridLayout div { /* Aqui setamos o valor padrão novamente para as divs. */
     width: auto;
     height: auto;
 }
 
-#header{
-    grid-area: header;
+#header {
+    grid-area: header; /* Com essa propriedade, damos um nome ao elemento, com isso podemos utilizá-lo lá no grid-template-areas. */
+    align-self: self-start;
 }
 
-#sidebar{
-    grid-area: sidebar;
+#sidebar {
+    grid-area: sidebar; /* Com essa propriedade, damos um nome ao elemento, com isso podemos utilizá-lo lá no grid-template-areas. */
+    height: 95%; /* Aqui informamos que essa div vai ocupar 95% do espaço disponível do container, essa linha é aquela que setamos o 1fr. */
+    align-self: center;
 }
 
 #content{
-    grid-area: content;
+    grid-area: content; /* Com essa propriedade, damos um nome ao elemento, com isso podemos utilizá-lo lá no grid-template-areas. */
+    height: 95%; /* Aqui informamos que essa div vai ocupar 95% do espaço disponível do container, essa linha é aquela que setamos o 1fr. */
+    align-self: center;
 }
 
-#footer{
-    grid-area: footer;
+#footer {
+    grid-area: footer; /* Com essa propriedade, damos um nome ao elemento, com isso podemos utilizá-lo lá no grid-template-areas. */
+    align-self: end;
 }
+
+/* Alinhamento dos itens de forma individual */
+
+.gridItens {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: 80px auto auto; /* Eu poderia colocar de outra forma rows: 80px 1fr 1fr; e ficaria a mesma coisa. */
+    /* Aqui eu fiz as divs ocuparem todo o espaço disponível de uma forma diferente. Nas colunas, eu coloquei auto em tudo para elas preencherem o espaço disponível totalmente, e nas linhas, eu coloquei que a primeira coluna vai ter um tamanho fixo de 80px e as outras duas vão preencher o restante do espaço. */
+    gap: 2px;
+    row-gap: 5px;
+}
+
+.gridItens div { /* Aqui setamos o valor padrão novamente para as divs. */
+    width: auto;
+    height: auto;
+    margin: 0; /* Tirando a margem da div. */
+}
+
+#item-01 {
+    grid-column-start: 1;
+    grid-column-end: 4;
+    /* Aqui temos uma propriedade interessante. Com ela, podemos dizer quantas colunas um elemento vai ocupar. Neste caso, a div um vai ocupar todas as colunas se posicionando no topo como se fosse um header.
+       É estranho vermos que ela inicia no 1 e termina no 4, sendo que ela ocupa só 3 colunas. O correto seria iniciar no 1 e terminar no 3, mas a regra nos traz dessa forma. É assim que a linguagem entende, então sempre coloque um número a mais quando for se referir à linha ou coluna final que esse elemento vai ocupar. */
+    height: 80px;
+}
+
+#item-02 {
+    grid-row-start: 2;
+    grid-row-end: 4;
+    /* Essa propriedade é a mesma da de cima, a diferença é que agora não são colunas, e sim as linhas. Quantas linhas esse elemento/div vai ocupar, que neste caso são duas linhas. */
+}
+
+#item-03 {
+    justify-self: end;
+    /* Com essa propriedade, podemos mexer no alinhamento horizontal do item. Neste caso, ele vai para o lado direito, que pode ser chamado de end/final. */
+}
+
+#item-04 {
+    align-self: center;
+    /* Já essa propriedade se refere ao alinhamento vertical do elemento. Neste caso, ele vai se alinhar no centro. */
+}
+
+#item-05 {
+    justify-self: start;
+}
+
+#item-06 {
+    align-self: center;
+    justify-self: center;
+    /* Neste caso, alinhamos o elemento no centro do espaço destinado a ele. */
+}
+
