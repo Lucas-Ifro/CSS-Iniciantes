@@ -1,0 +1,75 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+/*Configurações de class para facilitar a criação das atividades*/
+/*https://www.youtube.com/watch?v=Nloq6uzF8RQ*/
+/*https://www.youtube.com/watch?v=JJiyguTeBzU*/
+body{
+    background-color: rgb(37, 37, 37);
+    
+}
+
+h1, p, h2{
+    color: white;
+    margin-left: 50px;
+}
+div{
+    width: 100px;
+    height: 100px;
+    display: inline-block;
+
+}
+.titulo{
+    width: 100%;
+    height: 30px;
+    background-color: rgb(37, 37, 37);
+    border: 1px solid white;
+    border-bottom: 0px;
+    box-sizing: border-box;
+}
+
+section{
+    width: 90vw;
+    height: 500px;
+    margin: auto;
+    background-color: rgb(63, 63, 63);
+    margin-top: 30px;
+    box-sizing: border-box;
+
+}
+
+.blue{
+    background-color: rgb(65, 65, 249);
+}
+
+.red{
+    background-color: rgb(255, 67, 67);
+}
+
+.green{
+    background-color: rgb(19, 167, 19);
+}
+
+.yellow{
+    background-color: rgb(230, 230, 80);
+}
+
+/*Animações*/
+/*Dentro do CSS temos duas formas de adicionar animações*/
+/*1- Atravéz de alguma interação por parte de usuario, um click, hover, chexbox, focus etc. Esse tipo de animação é chamando de transição, onde eu vou de um estado A para um estado B trocando os estilos e propriedades do elemtento. Geralmente essa animações são mais simples.*/
+/*2- Temos as animações automaticas, que são ativadas quando o site carrega, essa são bem mais proderosas e mais complexas.*/
+
+/*Para criarmos uma animação precissamos definir uma class ou id para o elemento, com isso dentro do css adsionamos uma propriedade transition:, com ela pode definir o que vai ser mudado, quanto tempo vai demorar, um tempo até o efeito começas.*/
+.transitionBackground{
+    transition: background 2000ms;
+    /*Aqui temos o transition, essa animação ira modificar o background-color para amarelo, para isso expecificamos o background (Afirmando que é ele que será modificado)e o tempo que vai demorar para terminar essa animação que nesse caso é 2000ms ou 2s = 2 segundos. */
+    /*É uma boa pratica colocar o tempo de duração da transição em milisegundos, pois o javascript trabalha dessa forma, mais se utilizar em segundos também funciona */
+}
+
+.transitionBackground:hover{
+    background-color: yellow;
+    /*O hover é uma pisseudo classe, ele é ativado quando o mouse passa por cima do elemento, neste caso então quando o mouse passar por cima do elemnto o fundo do elemento passara a ser amarelo.*/
+    
+}
+/*Percebemos então que para criar um efeito é necessario criar uma classe e dentro do css adiconar um transition dentro dessa classe, e logo após colocar colocar uma forma de atrivar essa transição, nesse caso com o hover, e quando o hover for ativado ele vai mudar o fundo do elemento para amarelo com uma transição de 2 segundos.*/
