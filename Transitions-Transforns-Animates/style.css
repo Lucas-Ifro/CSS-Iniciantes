@@ -18,7 +18,7 @@ div{
     width: 100px;
     height: 100px;
     display: inline-block;
-
+    
 }
 .titulo{
     width: 100%;
@@ -27,15 +27,16 @@ div{
     border: 1px solid white;
     border-bottom: 0px;
     box-sizing: border-box;
+
+    
 }
 
 section{
     width: 90vw;
-    height: 500px;
+    height: 300px;
     margin: auto;
     background-color: rgb(63, 63, 63);
     margin-top: 30px;
-    box-sizing: border-box;
 
 }
 
@@ -63,8 +64,9 @@ section{
 /*Para criarmos uma animação precissamos definir uma class ou id para o elemento, com isso dentro do css adsionamos uma propriedade transition:, com ela pode definir o que vai ser mudado, quanto tempo vai demorar, um tempo até o efeito começas.*/
 .transitionBackground{
     transition: background 2000ms;
-    /*Aqui temos o transition, essa animação ira modificar o background-color para amarelo, para isso expecificamos o background (Afirmando que é ele que será modificado)e o tempo que vai demorar para terminar essa animação que nesse caso é 2000ms ou 2s = 2 segundos. */
+    /*Aqui temos o transition, essa animação ira modificar o background-color para amarelo, para isso expecificamos o background (Afirmando que a transição se refere a ele)e o tempo que vai demorar para terminar essa animação que nesse caso é 2000ms ou 2s = 2 segundos. */
     /*É uma boa pratica colocar o tempo de duração da transição em milisegundos, pois o javascript trabalha dessa forma, mais se utilizar em segundos também funciona */
+    /*No que você pode apricar uma transição? Basicamente tudo que pode ser quantificado(tenha quantidade, numerico), nesse exemplo temos um background e vamos mudar a sua cor, para isso havera uma transição da cor vermelha para a amarela passando por todas as cores que ficam entre elas, ou seja, so pode ser utilizado a transição em propriedades que tem valores numericos, a mudança de um display por exemplo, não pode ser usado como parametro na transition pois ela não tem valor numerico.*/
 }
 
 .transitionBackground:hover{
@@ -73,3 +75,58 @@ section{
     
 }
 /*Percebemos então que para criar um efeito é necessario criar uma classe e dentro do css adiconar um transition dentro dessa classe, e logo após colocar colocar uma forma de atrivar essa transição, nesse caso com o hover, e quando o hover for ativado ele vai mudar o fundo do elemento para amarelo com uma transição de 2 segundos.*/
+
+.transitionSize{
+    transition: transform 1000ms;
+    /* o transition aplica um efeito de transição a propriedade transform que pode ser utilizada para modificar os elementos.*/
+}
+
+.transitionSize:hover{
+    transform: scale(1.5);
+    /* Nesse caso a propriedade transforme está sendo usada almentar o elemento em 1.5x utilizando a função scale(). */
+}
+
+.transitionRotate{
+    transition: transform 1000ms;
+}
+
+.transitionRotate:hover{
+    transform: rotateZ(180deg)
+}
+
+.transitionDelay{
+    transition: width 1000ms 1200ms , height 2000ms;
+    /* Seadicionarmos um numero valor numerio depois do 1000ms ele vai ser contabilizando como o delay para ele executar, um tempo que a transiçao vai esperar para começar a executar. */
+    /* Também podemos apenas adicionar o transition-dalay e dar um valor. */
+    /* Caso você queira colocar mais de uma transição você deve separar por virgula e adicionar ela, da forma que foi feito a cima. */
+    /* Nesse caso vamos mudar a altura e alargura de um elemento com tempo de turação da trasição diferentes, dando um efeito bem legal. */
+    
+}
+
+.transitionDelay:hover{
+    width: 200px;
+    height: 200px;
+    /* Aqui eu coloco o quando eu quero que o elemento cresça */
+    
+}
+
+.transitionChecked{
+    transition: transform 800ms;
+    height: 40px;
+    width: 40px;
+    border: none;
+}
+
+.transitionChecked:checked{
+    transform: rotateY(360deg);
+}
+
+.transitionRadio{
+    width: 30px;
+    height: 30px;
+    transition: transform 1000ms;
+}
+
+.transitionRadio:checked{
+    transform: scale(1.2);
+}
