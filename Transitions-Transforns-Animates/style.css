@@ -30,13 +30,22 @@ div{
 
     
 }
-
-section{
+#content{
+    display: flex;
+    width: fit-content; /*pesquisar*/
+}
+article{
     width: 90vw;
-    height: 300px;
+    height: 250px;
     margin: auto;
     background-color: rgb(63, 63, 63);
     margin-top: 30px;
+    
+   
+
+}
+
+article div{
 
 }
 
@@ -111,22 +120,177 @@ section{
 }
 
 .transitionChecked{
-    transition: transform 800ms;
+    transition: transform 800ms; 
+    /* Dessa vez vou criar uma transição no checked, que quando ele for marcado ele vai girar no eixo y. */
+    /* Então definimos a função transition passamos que ela vai receber um transform e o tempo de turação. */
     height: 40px;
     width: 40px;
-    border: none;
+    /* Esses valores a cima são apenas para almentar o tamanho do checkbox. */
 }
 
 .transitionChecked:checked{
     transform: rotateY(360deg);
+    /* Aqui colocamos o transform com a função totateY e damos o valor de 360 para ele dar um giro inteiro. E fiz, está pronto. */
 }
 
 .transitionRadio{
     width: 30px;
     height: 30px;
     transition: transform 1000ms;
+    /* Aqui vamos fazer uma transição de que quando a opição for marcada ou seja quando ela for checked, o elemento vai aumentar. */
 }
 
 .transitionRadio:checked{
     transform: scale(1.2);
+    /*Aqui passamos a função scale que vai almentar o elemento em 1.2X quando ele for marcado.*/
+}
+
+.transitionText{
+    width: 200px;
+    height: 20px;
+    margin-top: 30px;
+    margin-left: 30px;
+    text-align: center;
+    
+    /* Essas configurações a cima são apenas para deixar o input:text mais bonito e maior */
+
+    transition: transform 1000ms 500ms, background-color 500ms;
+    /* Aqui nesse caso vamos realizar 2 mudanças no elemento, no seu tamanho e na sua cor. a diferença é que o transfom vai demora 500ms para ser ativado ou seja, tera um delay.*/
+
+
+}
+
+.transitionText:focus{
+    transform: scale(1.05);
+    background-color: rgb(143, 143, 143);
+    color: white;
+    
+
+    /* E aqui passamos os valores que queremos que o elemento input receba quando estiver focado. A pisseudo clase focus é ativada quando o usuario interagi com o elemento ao como o click do mouse ou do teclado.*/
+    /* "A pseudo-classe :focus do CSS é aplicada quando um elemento recebe foco, o que pode ocorrer quando o usuário seleciona o elemento utilizando o teclado ou ativando o mesmo com o mouse (ex: um campo de um formulário)". Referencias: Developer.Mozila.org */
+}
+
+
+/* ----------------------------------------------------- */
+/* Animações */
+
+/* As animações são diferentes das transições porque enquanto as transições presisão de um evento para occorre a animações não presição, elas são ativadas quando o site carrega.
+Nelas criamos uma animação dando um nome para essa animação, no exemplo a baixo temos o Infade, essa animção é criada usando o @keyframes ele verifica cada frame da animação, e modemos modificar o vai acontecendo conforme o tempo da animação vai derminando. */
+
+
+.animationInfade{
+    background-color: white;
+    margin: 10px;
+
+    animation: Infade 2000ms reverse infinite;
+    /* A sintaxe é a mesma mais os valores passados são diferentes primeiro vem o nome da animção depois o tempo, o delay, a forma com que os quadros vão se conportar, o por fim quantas vezes a animação vai ocorrer. */
+    /* O reverse é a forma com que os quandros vão se comportar, nesse caso ele vai ir de 0 ao fim e depois do fim ao 0, temos varias valores para isso, mais para frente vou mostras mais exemplos. */
+    /* O infinite vem mostras quantas vezes a animação vai ocorrer, nesse acaso é infinita. */
+}
+
+@keyframes Infade{
+    /* Aqui temos o Keyframes ele vai criar a nossa animação, com ele podemos modificar o estado do elemento a cada frame do evendo, nesse caso vamos mudar a cor de fundo, do amarelo para o vermelho até na metade da animação de depois do vermelho para o azul ate o final da animação, e como temos o reverse ele vai vai voltar de trás para frente azul vermelho e amarelo. De forma infinita. */
+
+    0%{ /* Aqui temos o estado inicial da animação, no frame 0 */
+        background-color: rgb(255, 255, 8);
+    }
+    /* Podemos usar varios valores para ir modificando o elemento enquanto a animação acontece, temos o from que seria inicio e o to que seria o final, vamos usar eles mais para frente. */
+    50%{
+        background-color: rgb(255, 31, 31);
+    }
+
+    100%{
+        background-color: rgb(81, 81, 252);
+    }
+    /* Essa animação Infade pode ser utilizada quantos eleemento você quiser, e você pode mudar os outros valores aumentar o tempo, por exemplo. */
+}
+
+.animationInfade2{
+    margin: 10px;
+    
+    animation: Infade 4000ms linear 5; /* Recarregue a pagina para poder ver funcionando*/
+    /* Aqui usamos a mesma animação Infade a diferença é que agora ele não é infinito, e demora mais, e os frames são lineares vão passando na mesma velocidade. */
+    animation-fill-mode: forwards; /* Com essa propriedade podemos definir como o elemento vai ficar depois da animação terminar, nesse caso ele vai ficar com o estado do ultimo frame, no caso azul.*/
+}
+
+.animationRotate{
+    border-radius: 35%;
+    margin: 10px;
+
+    animation: Rodar 2s linear infinite;
+}
+
+.animationRotateEase{
+    border-radius: 35%;
+    margin: 10px;
+
+    animation: Rodar 2s infinite;
+    animation-timing-function: ease;
+}
+
+@keyframes Rodar {
+    from{
+        transform: rotateZ(0deg);
+    }
+    to{
+        transform: rotateZ(360deg);
+    }
+}
+
+.positionBox{
+    position: relative;
+}
+
+.animateionPosition{
+    position: absolute;
+    transform: translate(-50%, -50%);
+    margin: 10px;
+    animation: Meio 2500ms linear infinite;
+}
+
+@keyframes Meio {
+    0%{
+        top: 30%;
+        left: 1%;
+    }
+    50%{
+        top: 50%;
+        left: 50%;
+    }
+    100%{
+        top: 30%;
+        left: 1%;
+    }
+}
+
+div:hover{
+    animation-play-state: paused; /*Com essa propriedade podemos pausar uma animação, serve também para ativar uma animação, nesse caso ele pausa uma animação quando você coloca o mouse em cima do da div.*/
+    /* Você pode colocar esse metodo no elemento como paused e quando voce passar o mouse a ele coloca a animação como ativa running*/
+}
+
+.container{
+    display: flex;
+}
+div.animationPromocao{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.animationPromocao::after{
+    content: "";
+    animation: promocao 2s linear infinite;
+
+    
+}
+
+@keyframes promocao {
+    0%{
+        content: "Promoção";
+    }
+    50%{
+        content: "";
+    }
+    60%{
+        content: "Frete Grátis";
+    }
 }
