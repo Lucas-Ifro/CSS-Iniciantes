@@ -1,150 +1,147 @@
-*{
-    margin: 0px;
-    padding: 0px;
+* {
+    margin: 0;
+    padding: 0;
 }
-/*Configurações de class para facilitar a criação das atividades*/
-/*https://www.youtube.com/watch?v=Nloq6uzF8RQ*/
-/*https://www.youtube.com/watch?v=JJiyguTeBzU*/
-body{
+/* Configurações de classe para facilitar a criação das atividades */
+/* Referências:
+   - https://www.youtube.com/watch?v=Nloq6uzF8RQ
+   - https://www.youtube.com/watch?v=JJiyguTeBzU */
+
+body {
     background-color: rgb(37, 37, 37);
-    
 }
 
-h1, p, h2{
+h1, p, h2 {
     color: white;
     margin-left: 50px;
 }
-div{
+
+div {
     width: 100px;
     height: 100px;
     display: inline-block;
-    
 }
-.titulo{
+
+.titulo {
     width: 100%;
     height: 30px;
     background-color: rgb(37, 37, 37);
     border: 1px solid white;
-    border-bottom: 0px;
+    border-bottom: 0;
     box-sizing: border-box;
+}
 
-    
-}
-#content{
+#content {
     display: flex;
-    width: fit-content; /*pesquisar*/
+    width: fit-content; /* Pesquisar */
 }
-article{
+
+article {
     width: 90vw;
     height: 250px;
     margin: auto;
     background-color: rgb(63, 63, 63);
     margin-top: 30px;
-    
-   
-
 }
 
-article div{
-
+article div {
+    /* Adicione propriedades se necessário */
 }
 
-.blue{
+.blue {
     background-color: rgb(65, 65, 249);
 }
 
-.red{
+.red {
     background-color: rgb(255, 67, 67);
 }
 
-.green{
+.green {
     background-color: rgb(19, 167, 19);
 }
 
-.yellow{
+.yellow {
     background-color: rgb(230, 230, 80);
 }
 
-/*Animações*/
-/*Dentro do CSS temos duas formas de adicionar animações*/
-/*1- Atravéz de alguma interação por parte de usuario, um click, hover, chexbox, focus etc. Esse tipo de animação é chamando de transição, onde eu vou de um estado A para um estado B trocando os estilos e propriedades do elemtento. Geralmente essa animações são mais simples.*/
-/*2- Temos as animações automaticas, que são ativadas quando o site carrega, essa são bem mais proderosas e mais complexas.*/
+/* Animações */
+/* Dentro do CSS, temos duas formas de adicionar animações: */
+/* 1 - Através de alguma interação por parte do usuário, como um clique, hover, checkbox, focus, etc. Essa animação é chamada de transição, onde vou de um estado A para um estado B trocando os estilos e propriedades do elemento. Geralmente, essas animações são mais simples. */
+/* 2 - Temos as animações automáticas, que são ativadas quando o site carrega. Essas são mais poderosas e complexas. */
 
-/*Para criarmos uma animação precissamos definir uma class ou id para o elemento, com isso dentro do css adsionamos uma propriedade transition:, com ela pode definir o que vai ser mudado, quanto tempo vai demorar, um tempo até o efeito começas.*/
-.transitionBackground{
+/* Para criarmos uma animação, precisamos definir uma classe ou ID para o elemento. Em seguida, dentro do CSS, adicionamos uma propriedade transition:, onde podemos definir o que será mudado e quanto tempo levará. */
+/* É uma boa prática colocar o tempo de duração da transição em milissegundos, pois o JavaScript trabalha dessa forma. Mas também funciona em segundos. */
+/* Podemos aplicar uma transição a propriedades que têm valores numéricos, como neste exemplo, em que mudamos a cor de fundo (background). */
+
+.transitionBackground {
     transition: background 2000ms;
-    /*Aqui temos o transition, essa animação ira modificar o background-color para amarelo, para isso expecificamos o background (Afirmando que a transição se refere a ele)e o tempo que vai demorar para terminar essa animação que nesse caso é 2000ms ou 2s = 2 segundos. */
-    /*É uma boa pratica colocar o tempo de duração da transição em milisegundos, pois o javascript trabalha dessa forma, mais se utilizar em segundos também funciona */
-    /*No que você pode apricar uma transição? Basicamente tudo que pode ser quantificado(tenha quantidade, numerico), nesse exemplo temos um background e vamos mudar a sua cor, para isso havera uma transição da cor vermelha para a amarela passando por todas as cores que ficam entre elas, ou seja, so pode ser utilizado a transição em propriedades que tem valores numericos, a mudança de um display por exemplo, não pode ser usado como parametro na transition pois ela não tem valor numerico.*/
 }
 
-.transitionBackground:hover{
+.transitionBackground:hover {
     background-color: yellow;
-    /*O hover é uma pisseudo classe, ele é ativado quando o mouse passa por cima do elemento, neste caso então quando o mouse passar por cima do elemnto o fundo do elemento passara a ser amarelo.*/
-    
+    /* O hover é uma pseudo-classe ativada quando o mouse passa sobre o elemento. Neste caso, o fundo do elemento torna-se amarelo. */
 }
-/*Percebemos então que para criar um efeito é necessario criar uma classe e dentro do css adiconar um transition dentro dessa classe, e logo após colocar colocar uma forma de atrivar essa transição, nesse caso com o hover, e quando o hover for ativado ele vai mudar o fundo do elemento para amarelo com uma transição de 2 segundos.*/
 
-.transitionSize{
+/* Para criar um efeito, é necessário criar uma classe, adicionar um transition no CSS e, em seguida, uma forma de ativá-la, como o hover. */
+
+.transitionSize {
     transition: transform 1000ms;
-    /* o transition aplica um efeito de transição a propriedade transform que pode ser utilizada para modificar os elementos.*/
 }
 
-.transitionSize:hover{
+.transitionSize:hover {
     transform: scale(1.5);
-    /* Nesse caso a propriedade transforme está sendo usada almentar o elemento em 1.5x utilizando a função scale(). */
+    /* Aqui a propriedade transform está sendo usada para aumentar o elemento em 1.5x usando a função scale(). */
 }
 
-.transitionRotate{
+.transitionRotate {
     transition: transform 1000ms;
 }
 
-.transitionRotate:hover{
-    transform: rotateZ(180deg)
+.transitionRotate:hover {
+    transform: rotateZ(180deg);
 }
 
-.transitionDelay{
-    transition: width 1000ms 1200ms , height 2000ms;
-    /* Seadicionarmos um numero valor numerio depois do 1000ms ele vai ser contabilizando como o delay para ele executar, um tempo que a transiçao vai esperar para começar a executar. */
-    /* Também podemos apenas adicionar o transition-dalay e dar um valor. */
-    /* Caso você queira colocar mais de uma transição você deve separar por virgula e adicionar ela, da forma que foi feito a cima. */
-    /* Nesse caso vamos mudar a altura e alargura de um elemento com tempo de turação da trasição diferentes, dando um efeito bem legal. */
-    
+.transitionDelay {
+    transition: width 1000ms 1200ms, height 2000ms;
+    /* Se adicionarmos um número após os 1000ms, ele será considerado como delay para iniciar a transição. */
+    /* Também podemos apenas adicionar o transition-delay e dar um valor. */
+    /* Se desejar aplicar mais de uma transição, separe por vírgula, como feito acima. */
+    /* Neste caso, mudamos a altura e largura do elemento com durações diferentes, criando um efeito interessante. */
 }
 
-.transitionDelay:hover{
+.transitionDelay:hover {
     width: 200px;
     height: 200px;
-    /* Aqui eu coloco o quando eu quero que o elemento cresça */
-    
+    /* Aqui especificamos as novas dimensões do elemento quando o hover é ativado. */
 }
 
-.transitionChecked{
+.transitionChecked {
     transition: transform 800ms; 
-    /* Dessa vez vou criar uma transição no checked, que quando ele for marcado ele vai girar no eixo y. */
-    /* Então definimos a função transition passamos que ela vai receber um transform e o tempo de turação. */
+    /* Aqui criamos uma transição para o estado :checked, que gira o elemento no eixo Y. */
+    /* Definimos a função transition indicando que receberá um transform e o tempo de duração. */
     height: 40px;
     width: 40px;
-    /* Esses valores a cima são apenas para almentar o tamanho do checkbox. */
+    /* Esses valores aumentam o tamanho do checkbox. */
 }
 
-.transitionChecked:checked{
+.transitionChecked:checked {
     transform: rotateY(360deg);
-    /* Aqui colocamos o transform com a função totateY e damos o valor de 360 para ele dar um giro inteiro. E fiz, está pronto. */
+    /* Aqui aplicamos a transformação com a função rotateY e damos o valor de 360 para uma rotação completa. */
 }
 
-.transitionRadio{
+.transitionRadio {
     width: 30px;
     height: 30px;
     transition: transform 1000ms;
-    /* Aqui vamos fazer uma transição de que quando a opição for marcada ou seja quando ela for checked, o elemento vai aumentar. */
+    /* Aqui criamos uma transição para o estado :checked, onde o elemento aumentará de tamanho. */
 }
 
-.transitionRadio:checked{
+.transitionRadio:checked {
     transform: scale(1.2);
-    /*Aqui passamos a função scale que vai almentar o elemento em 1.2X quando ele for marcado.*/
+    /* Aqui usamos a função scale para aumentar o elemento em 1.2x quando estiver marcado. */
 }
 
+/* Configurações para o texto animado */
 .transitionText{
     width: 200px;
     height: 20px;
@@ -152,49 +149,46 @@ article div{
     margin-left: 30px;
     text-align: center;
     
-    /* Essas configurações a cima são apenas para deixar o input:text mais bonito e maior */
+    /* Essas configurações acima são apenas para deixar o input:text mais bonito e maior */
 
     transition: transform 1000ms 500ms, background-color 500ms;
-    /* Aqui nesse caso vamos realizar 2 mudanças no elemento, no seu tamanho e na sua cor. a diferença é que o transfom vai demora 500ms para ser ativado ou seja, tera um delay.*/
-
-
+    /* Neste caso, faremos 2 mudanças no elemento: no tamanho e na cor. A diferença é que a transformação terá um atraso de 500ms. */
 }
 
+/* Quando o elemento estiver focado, aplicamos as seguintes configurações */
 .transitionText:focus{
     transform: scale(1.05);
     background-color: rgb(143, 143, 143);
     color: white;
     
-
-    /* E aqui passamos os valores que queremos que o elemento input receba quando estiver focado. A pisseudo clase focus é ativada quando o usuario interagi com o elemento ao como o click do mouse ou do teclado.*/
-    /* "A pseudo-classe :focus do CSS é aplicada quando um elemento recebe foco, o que pode ocorrer quando o usuário seleciona o elemento utilizando o teclado ou ativando o mesmo com o mouse (ex: um campo de um formulário)". Referencias: Developer.Mozila.org */
+    /* Aqui passamos os valores que queremos que o elemento input receba quando estiver focado. A pseudo-classe focus é ativada quando o usuário interage com o elemento, como o clique do mouse ou do teclado. */
+    /* "A pseudo-classe :focus do CSS é aplicada quando um elemento recebe foco, o que pode ocorrer quando o usuário seleciona o elemento utilizando o teclado ou ativando o mesmo com o mouse (ex: um campo de um formulário)". Referências: Developer.Mozilla.org */
 }
-
 
 /* ----------------------------------------------------- */
 /* Animações */
 
-/* As animações são diferentes das transições porque enquanto as transições presisão de um evento para occorre a animações não presição, elas são ativadas quando o site carrega.
-Nelas criamos uma animação dando um nome para essa animação, no exemplo a baixo temos o Infade, essa animção é criada usando o @keyframes ele verifica cada frame da animação, e modemos modificar o vai acontecendo conforme o tempo da animação vai derminando. */
+/* As animações são diferentes das transições porque enquanto as transições precisam de um evento para ocorrer, as animações não precisam. Elas são ativadas quando o site carrega.
+Nelas criamos uma animação dando um nome para essa animação. No exemplo abaixo, temos o Infade. Essa animação é criada usando o @keyframes, que verifica cada frame da animação, e podemos modificar o que vai acontecendo conforme o tempo da animação vai determinando. */
 
-
+/* Configurações para a animação de desvanecimento */
 .animationInfade{
     background-color: white;
     margin: 10px;
 
     animation: Infade 2000ms reverse infinite;
-    /* A sintaxe é a mesma mais os valores passados são diferentes primeiro vem o nome da animção depois o tempo, o delay, a forma com que os quadros vão se conportar, o por fim quantas vezes a animação vai ocorrer. */
-    /* O reverse é a forma com que os quandros vão se comportar, nesse caso ele vai ir de 0 ao fim e depois do fim ao 0, temos varias valores para isso, mais para frente vou mostras mais exemplos. */
-    /* O infinite vem mostras quantas vezes a animação vai ocorrer, nesse acaso é infinita. */
+    /* A sintaxe é a mesma, mas os valores passados são diferentes. Primeiro vem o nome da animação, depois o tempo, o atraso, a forma com que os quadros vão se comportar e, por fim, quantas vezes a animação vai ocorrer. */
+    /* O reverse é a forma com que os quadros vão se comportar. Nesse caso, ele vai de 0 ao fim e depois do fim ao 0. Temos vários valores para isso, mais para frente vou mostrar mais exemplos. */
+    /* O infinite mostra quantas vezes a animação vai ocorrer; neste caso, é infinita. */
 }
 
 @keyframes Infade{
-    /* Aqui temos o Keyframes ele vai criar a nossa animação, com ele podemos modificar o estado do elemento a cada frame do evendo, nesse caso vamos mudar a cor de fundo, do amarelo para o vermelho até na metade da animação de depois do vermelho para o azul ate o final da animação, e como temos o reverse ele vai vai voltar de trás para frente azul vermelho e amarelo. De forma infinita. */
+    /* Aqui temos o Keyframes. Ele vai criar a nossa animação, com ele podemos modificar o estado do elemento a cada frame do evento. Nesse caso, vamos mudar a cor de fundo, do amarelo para o vermelho até na metade da animação, e depois do vermelho para o azul até o final da animação. Como temos o reverse, ele vai voltar de trás para frente, azul, vermelho e amarelo, de forma infinita. */
 
     0%{ /* Aqui temos o estado inicial da animação, no frame 0 */
         background-color: rgb(255, 255, 8);
     }
-    /* Podemos usar varios valores para ir modificando o elemento enquanto a animação acontece, temos o from que seria inicio e o to que seria o final, vamos usar eles mais para frente. */
+    /* Podemos usar vários valores para ir modificando o elemento enquanto a animação acontece. Temos o from que seria o início e o to que seria o final; vamos usar eles mais para frente. */
     50%{
         background-color: rgb(255, 31, 31);
     }
@@ -202,33 +196,43 @@ Nelas criamos uma animação dando um nome para essa animação, no exemplo a ba
     100%{
         background-color: rgb(81, 81, 252);
     }
-    /* Essa animação Infade pode ser utilizada quantos eleemento você quiser, e você pode mudar os outros valores aumentar o tempo, por exemplo. */
+    /* Essa animação Infade pode ser utilizada quantos elementos você quiser, e você pode mudar os outros valores, aumentar o tempo, por exemplo. */
 }
 
+/* Configurações para a segunda animação de desvanecimento */
 .animationInfade2{
     margin: 10px;
     
-    animation: Infade 4000ms linear 5; /* Recarregue a pagina para poder ver funcionando*/
-    /* Aqui usamos a mesma animação Infade a diferença é que agora ele não é infinito, e demora mais, e os frames são lineares vão passando na mesma velocidade. */
-    animation-fill-mode: forwards; /* Com essa propriedade podemos definir como o elemento vai ficar depois da animação terminar, nesse caso ele vai ficar com o estado do ultimo frame, no caso azul.*/
+    animation: Infade 4000ms linear 5; /* Recarregue a página para poder ver funcionando*/
+    /* Aqui usamos a mesma animação Infade, a diferença é que agora ela não é infinita, demora mais, e os frames são lineares, passando na mesma velocidade. */
+    animation-fill-mode: forwards; /* Com essa propriedade, podemos definir como o elemento vai ficar depois da animação terminar; neste caso, ele vai ficar com o estado do último frame, no caso, azul. */
 }
 
+/* Agora vamos usar a animação Rodar em dois elementos e com configurações diferentes */
+/* Configurações para a animação de rotação */
 .animationRotate{
     border-radius: 35%;
+    /* O border-radius vai deixar o elemento com as bordas redondas */
     margin: 10px;
 
     animation: Rodar 2s linear infinite;
+    /* Aqui vinculamos a animation com a animação Rodar. Temos que a forma com que os frames vão passar será de forma linear, ou seja, no mesmo ritmo, e isso de forma infinita. */
 }
 
+/* Configurações para a segunda animação de rotação */
 .animationRotateEase{
     border-radius: 35%;
+    /* O border-radius vai deixar o elemento com as bordas redondas */
     margin: 10px;
 
     animation: Rodar 2s infinite;
+    /* Aqui temos as mesmas configurações de cima. A diferença é que vamos configurar a forma com que os frames vão correr de forma separada. */
     animation-timing-function: ease;
+    /* Aqui temos a animation-timing-function, tem vários valores. O linear é um deles e já utilizamos bastante; outros valores são o ease, ease-in, ease-in-out. Mas você pode criar de uma forma customizada. Entre no inspetor do navegador, vá até o elemento animationRotateEase e clique no ícone que aparece do lado de animation-timing-function: ease; lá você vai conseguir modificar de várias formas. */
 }
 
 @keyframes Rodar {
+    /* Aqui temos a animação que faz o elemento rodar no eixo Z que é o do meio. Ele sai de 0deg e vai até 360deg, voltando para a posição inicial, e depois volta a repetir a animação. */
     from{
         transform: rotateZ(0deg);
     }
@@ -237,37 +241,44 @@ Nelas criamos uma animação dando um nome para essa animação, no exemplo a ba
     }
 }
 
+
 .positionBox{
     position: relative;
 }
 
+/* Configurações para a animação de posição */
 .animateionPosition{
     position: absolute;
-    transform: translate(-50%, -50%);
+    /* Com a position relative no elemento pai e a absolute no elemento filho, podemos movimentar ele como quisermos dentro do pai, utilizando o top e o left */
     margin: 10px;
     animation: Meio 2500ms linear infinite;
+    /* Aqui temos uma animação Meio que vai ir adicionando novas posições para esse elemento. */
 }
 
 @keyframes Meio {
     0%{
-        top: 30%;
-        left: 1%;
+        top: 0%;
+        left: 0%;
+        /* Aqui vamos ir modificando a posição do elemento dentro do pai */
     }
     50%{
         top: 50%;
         left: 50%;
+        /* Aqui ele vai ir para o meio da tela e depois, por fim, voltar à posição inicial. */
     }
     100%{
-        top: 30%;
-        left: 1%;
+        top: 0%;
+        left: 0%;
     }
 }
 
+/* Quando o mouse está sobre a div, a animação é pausada */
 div:hover{
-    animation-play-state: paused; /*Com essa propriedade podemos pausar uma animação, serve também para ativar uma animação, nesse caso ele pausa uma animação quando você coloca o mouse em cima do da div.*/
-    /* Você pode colocar esse metodo no elemento como paused e quando voce passar o mouse a ele coloca a animação como ativa running*/
+    animation-play-state: paused; /* Com essa propriedade, podemos pausar uma animação. Serve também para ativar uma animação; nesse caso, ela pausa uma animação quando você coloca o mouse em cima da div. */
+    /* Você pode colocar esse método no elemento como paused, e quando você passar o mouse, ele coloca a animação como ativa, running */
 }
 
+/* Esses códigos abaixo são apenas para centralizar o texto dentro da div container. */
 .container{
     display: flex;
 }
@@ -276,14 +287,18 @@ div.animationPromocao{
     justify-content: center;
     align-items: center;
 }
-.animationPromocao::after{
-    content: "";
-    animation: promocao 2s linear infinite;
 
-    
+/* Pseudo-elemento após a animação de promoção */
+.animationPromocao::after{
+    /* O ::after é um pseudo-elemento, ele é utilizado muitas vezes para adicionar um texto dentro de um elemento, por exemplo, você pode adicionar uma nova palavra no final do parágrafo. */
+    content: "";
+    /* Para adicionar a palavra ao final do parágrafo, você utiliza o content: "Aqui vai a palavra", no caso dessa animação, vamos iniciar de forma vazia e depois adicionar as palavras dentro da animação. */
+    animation: promocao 2s linear infinite;
 }
 
+/* Configurações para a animação de promoção */
 @keyframes promocao {
+    /* Aqui dentro da animação vamos ir dando valor para o content */
     0%{
         content: "Promoção";
     }
@@ -294,3 +309,7 @@ div.animationPromocao{
         content: "Frete Grátis";
     }
 }
+
+/* Então, resumindo, para criar uma animação, você precisa criar uma animação e dar um nome a ela usando o Keyframes que controla todos os frames da animação, como o criado acima "promocao", com isso dentro dele você coloca o que vai ser modificado no elemento.
+Após isso, dentro do elemento que vai ser animado, você coloca animation: |o nome da animação| |O tempo que vai demorar| |O delay| |A forma com que os quadros vão correr| | E por fim quantas vezes a animação vai acontecer| 
+*/
