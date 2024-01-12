@@ -3,12 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="estilos/styleGlobais.css">
+    <link rel="stylesheet" href="estilos/styleCadastro.css">
+    <link rel="stylesheet" href="estilos/styleLogin.css">
     <title>Tela de Login/Cadastro</title>
 </head>
-<body>
+<body onload="limparSenha()">
     <main>
-        <div class="inicial"></div>
+        <div class="login">
+            <form action="#" autocomplete="off">
+                <h1>Realizar login</h1>
+                <p>Informe suas Credenciais</p>
+                <div class="item-1">
+                    <label for="inome">Seu nome completo
+                        <input type="text" name="nome" id="inomeCompleto" placeholder="User">
+    
+                    </label>
+                </div>
+
+                <div class="item-3">
+                    <label for="isenha">Senha 
+                        <input type="password" name="senha" id="isenhaLogin" placeholder="Password" autocomplete="off" value=" ">
+    
+                    </label>    
+                </div>
+
+                <div class="submit entrar">
+                    <input type="submit" value="Criar Conta" class="button">
+                </div>
+                
+                <hr>
+                <p>Não possui conta!!!</p>
+                <div id="Nconta">
+                    <input type="submit" value="Crie" class="button criar">
+
+                </div>
+            
+
+            </form>
+        </div>
         <div class="cadastro">
             <form action="#">
                 <H1>Criar conta</H1>
@@ -21,13 +54,13 @@
 
                 <div class="item-2">
                     <label for="isobreNome">Sobre nome 
-                        <input type="password" name="sobreNome" id="isobreNome">
+                        <input type="text" name="sobreNome" id="isobreNome">
     
                     </label>    
                 </div>
                 <div class="item-3">
                     <label for="isenha">Senha 
-                        <input type="text" name="senha" id="isenha">
+                        <input type="password" name="senha" id="isenha" >
     
                     </label>    
                 </div>
@@ -40,12 +73,18 @@
                 </div>
 
                 <div class="submit">
-                    <input type="submit" value="Criar" class="button">
+                    <input type="submit" value="Criar Conta" class="button">
                 </div>
                 
 
             </form>
         </div>
     </main>
+    <script>
+        function limparSenha(){
+            document.getElementById("isenhaLogin").value = ""
+            document.getElementById("isenha").value = ""
+        }
+    </script>
 </body>
 </html>

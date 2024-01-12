@@ -1,0 +1,19 @@
+.cadastro{
+    width: 320px;
+    height: 400px;
+    background-color: #cccccc5c;
+    border-radius: 20px;
+    box-sizing: border-box;
+    padding: 15px;
+    display: none;
+    flex-wrap: wrap;
+    
+}
+
+#isexoH, #isexoM{
+    width: 18px;
+    height: 18px;
+    margin-right: 5px;
+    margin-top: 2px;
+    color: red;
+}
