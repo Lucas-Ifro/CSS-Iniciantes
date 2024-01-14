@@ -31,7 +31,7 @@
                 <div class="erro"></div>
                 
                 <div class="submit entrar">
-                    <input type="submit" value="Entrar" class="button" onclick="CarregarLoading()">
+                    <input type="submit" value="Entrar" class="button" onclick="CarregarLoading(event)">
                 </div>
                 <hr>
                 
@@ -49,20 +49,20 @@
                 <H1>Criar conta</H1>
                 <div class="item-1" id="item-2">
                     <label for="inome">Seu nome
-                        <input type="text" name="nome" id="inome" >
+                        <input type="text" name="nome" id="inome" placeholder="User">
     
                     </label>
                 </div>
 
                 <div class="item-2">
                     <label for="isobreNome">Sobrenome 
-                        <input type="text" name="sobreNome" id="isobreNome">
+                        <input type="text" name="sobreNome" id="isobreNome" placeholder="Lest Name">
     
                     </label>    
                 </div>
                 <div class="item-3">
                     <label for="isenha">Senha 
-                        <input type="password" name="senha" id="isenha" >
+                        <input type="password" name="senha" id="isenha" placeholder="Password">
     
                     </label>    
                 </div>
@@ -75,14 +75,14 @@
                 </div>
                 <div class="erro"></div>
                 <div class="submit" id="criarConta">
-                    <input type="submit" value="Criar Conta" class="button" onclick="CarregarLoading()">
+                    <input type="submit" value="Criar Conta" class="button" onclick="CarregarLoading(event)">
                 </div>
                 
 
             </form>
         </div>
         <div class="loading">
-            <div class="nome"><h1>Bem vindo, </h1><div>
+            <div class="nome"><h1 id="saudacao"></h1>
             <div class="conteiner">
                 <div class="carregando"></div>
                 <div class="text"><p>Carregando...</p></div>
@@ -93,61 +93,6 @@
 
         </div>
     </main>
-    <script>
-        function limparSenha(){
-            document.getElementById("isenhaLogin").value = ""
-            document.getElementById("isenha").value = ""
-        }
-
-        function CarregarCadastro(){
-            let login = document.getElementsByClassName("login")[0]
-            login.style.display = 'none';
-
-            let cadastro = document.getElementsByClassName("cadastro")[0]
-            cadastro.style.display = 'flex';
-
-        }
-
-        function CarregarLoading(){
-
-            let nome = document.getElementById("inome").value + document.getElementById("inomeCompleto").value;
-            let senha = document.getElementById("isenha").value + document.getElementById("isenhaLogin").value;
-            let sobreNome = document.getElementById("isobreNome").value
-
-            if (nome === "" || senha === "") {
-                document.getElementById("item-1").style.marginTop = "10px"
-                document.getElementById("item-2").style.marginTop = "10px"
-                document.getElementById("criarConta").style.marginTop = "15px"
-
-                let erro = document.getElementsByClassName("erro")[0]
-                    erro.innerHTML = "*Exextém campos vazios"
-
-                let erro2 = document.getElementsByClassName("erro")[1]
-                    erro2.innerHTML = "*Exextém campos vazios"
-
-
-            } else if(sobreNome === "") {
-                document.getElementById("item-1").style.marginTop = "10px"
-                document.getElementById("item-2").style.marginTop = "10px"
-                document.getElementById("criarConta").style.marginTop = "15px"
-
-                let erro2 = document.getElementsByClassName("erro")[1]
-                    erro2.innerHTML = "*Exextém campos vazios"
-
-            }else{
-                console.log("cheio")
-                let cadastro = document.getElementsByClassName("cadastro")[0]
-                    cadastro.style.display = 'none';
-    
-                let login = document.getElementsByClassName("login")[0]
-                    login.style.display = 'none';
-    
-                let loading = document.getElementsByClassName("loading")[0]
-                    loading.style.display = "flex";
-            }
-            
-
-        }
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
