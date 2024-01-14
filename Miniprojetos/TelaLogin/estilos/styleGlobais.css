@@ -21,6 +21,7 @@ main{
 
 .cadastro form, .login form{
     width: 100%;
+    height: 270px;
     
 }
 
@@ -30,6 +31,7 @@ main{
 
 .cadastro h1, .login h1, p{
     text-align: center;
+    margin-bottom: 5px;
     opacity: 100%;
     width: 100%;
     height: 30px;
@@ -38,7 +40,6 @@ main{
 
 .item-1, .item-2, .item-3, .item-4{
     color: white;
-    font-weight: bolder;
     opacity: 70%;
 }
 .item-4{
