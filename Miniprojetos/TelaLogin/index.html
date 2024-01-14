@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="estilos/styleGlobais.css">
     <link rel="stylesheet" href="estilos/styleCadastro.css">
     <link rel="stylesheet" href="estilos/styleLogin.css">
+    <link rel="stylesheet" href="estilos/styleLoading.css">
     <title>Tela de Login/Cadastro</title>
 </head>
 <body onload="limparSenha()">
@@ -29,13 +30,13 @@
                 </div>
 
                 <div class="submit entrar">
-                    <input type="submit" value="Criar Conta" class="button">
+                    <input type="submit" value="Entrar" class="button">
                 </div>
                 
                 <hr>
-                <p>Não possui conta!!!</p>
+                <p>Ainda não tem conta?</p>
                 <div id="Nconta">
-                    <input type="submit" value="Crie" class="button criar">
+                    <input type="submit" value="Criar" class="button criar">
 
                 </div>
             
@@ -65,19 +66,28 @@
                     </label>    
                 </div>
 
-                <div class="item-4">
+                <div class="item-4" id="radio">
                     <input type="radio" name="sexo" id="isexoH" value="H">
                     <label for="isexoH">Homen</label> 
                     <input type="radio" name="sexo" id="isexoM" value="M">
                     <label for="isexoM">Mulher</label>
                 </div>
 
-                <div class="submit">
+                <div class="submit" id="criarConta">
                     <input type="submit" value="Criar Conta" class="button">
                 </div>
                 
 
             </form>
+        </div>
+        <div class="loading">
+            <div class="nome"><h1>Bem vindo, 12345678901234</h1><div>
+            <div class="conteiner">
+                <div class="carregando"></div>
+                <div class="text"><p>Carregando...</p></div>
+            </div>
+            <p>Isso é tudo, obrigado 😁</p>
+
         </div>
     </main>
     <script>

@@ -1,6 +1,6 @@
 .cadastro{
     width: 320px;
-    height: 400px;
+    height: 350px;
     background-color: #cccccc5c;
     border-radius: 20px;
     box-sizing: border-box;
@@ -15,5 +15,12 @@
     height: 18px;
     margin-right: 5px;
     margin-top: 2px;
-    color: red;
+}
+
+#criarConta, #criarConta input{
+    margin-top: 12px;
+}
+
+#radio{
+    margin-top: 15px;
 }

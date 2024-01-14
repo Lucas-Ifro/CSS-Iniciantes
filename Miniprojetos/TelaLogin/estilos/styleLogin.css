@@ -1,9 +1,9 @@
 .login{
     width: 320px;
-    height: 410px;
+    height: 400px;
     background-color: #cccccc5c;
     border-radius: 20px;
-    display: flex;
+    display: none;
     flex-wrap: wrap;
     justify-content: center;
     box-sizing: border-box;
@@ -12,14 +12,15 @@
 }
 
 .login p{
-    margin-top: 20px;
+    margin-top: 10px;
     color: white;
-    font-size: 1.2em;
+    font-size: 0.9em;
+    height: 25px;
     
 }
 
 .entrar{
-    margin-bottom: 20px;
+    margin-bottom: 25px;
 }
 
 .criar{
