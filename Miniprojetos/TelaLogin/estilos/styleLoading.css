@@ -24,7 +24,7 @@
     border-radius: 50%;
     box-sizing: border-box;
     border: 6px solid transparent;
-    border: 6px dotted #3a0c57;
+    border: 6px dotted #240538;
     
     animation: rodando 800ms linear infinite;
 }
